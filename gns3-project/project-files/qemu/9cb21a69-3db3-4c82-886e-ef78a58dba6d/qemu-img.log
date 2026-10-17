@@ -1,0 +1,1 @@
+Formatting '/home/abe/Desktop/nssa-final/gns3-project/project-files/qemu/9cb21a69-3db3-4c82-886e-ef78a58dba6d/hdb_disk.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=1048576 backing_file=/home/abe/GNS3/images/QEMU/IOSv_startup_config.img backing_fmt=raw lazy_refcounts=off refcount_bits=16
