@@ -1,0 +1,22 @@
+NSSA 443 — Phase 1 proposed Ansible project directory structure
+
+project/
+├── requirements.yaml          # Structured user requirements (sample supplied)
+├── app.py                     # Proposed Python/Streamlit interface
+├── ansible/
+│   ├── inventory.yml          # SSH management targets: R1–R5, SW1–SW2
+│   ├── site.yml               # Main deployment playbook
+│   ├── group_vars/            # Common IOS router/switch variables
+│   ├── host_vars/             # Per-device addressing/VLAN/routing variables
+│   └── templates/             # Optional Jinja2 configuration templates
+├── tests/
+│   └── network_tests.py       # Proposed read-only PASS/FAIL tests
+└── logs/                      # Proposed deployment/test logs
+
+Data flow:
+requirements.yaml → AI-assisted variables/selected tasks → ansible/site.yml
+→ SSH to GNS3 routers/switches → network_tests.py → PASS/FAIL + timing
+
+Only management reachability/SSH may be preconfigured manually before automated
+configuration. The screenshot does not show interface IDs or a management
+connection; confirm those details in GNS3 before implementation.
