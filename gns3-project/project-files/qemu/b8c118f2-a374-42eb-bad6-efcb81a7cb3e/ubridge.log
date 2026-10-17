@@ -1,14 +1,14 @@
 uBridge version 1.0.1 running with libpcap version 1.10.4 (with TPACKET_V3)
-Hypervisor TCP control server started (IP 127.0.0.1 port 42691).
+Hypervisor TCP control server started (IP 127.0.0.1 port 41455).
 UDP tunnel connecting from local port 20113 to IPv4 address 127.0.0.1 on port 20112
 UDP tunnel connecting from local port 20061 to IPv4 address 127.0.0.1 on port 20060
 Source NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-0 has started
-UDP tunnel connecting from local port 20115 to IPv4 address 127.0.0.1 on port 20114
 Destination NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-0 has started
+UDP tunnel connecting from local port 20115 to IPv4 address 127.0.0.1 on port 20114
 UDP tunnel connecting from local port 20064 to IPv4 address 127.0.0.1 on port 20065
-Source NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-1 has started
-Destination NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-1 has started
 UDP tunnel connecting from local port 20117 to IPv4 address 127.0.0.1 on port 20116
 UDP tunnel connecting from local port 20066 to IPv4 address 127.0.0.1 on port 20067
+Source NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-1 has started
+Destination NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-1 has started
 Source NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-2 has started
 Destination NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-2 has started

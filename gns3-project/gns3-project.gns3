@@ -16,7 +16,116 @@
     "supplier": null,
     "topology": {
         "computes": [],
-        "drawings": [],
+        "drawings": [
+            {
+                "drawing_id": "4744e5a4-e75c-4ab1-bd91-4438563031d9",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"11\" height=\"26\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\"> </text></svg>",
+                "x": -225,
+                "y": -21,
+                "z": 2
+            },
+            {
+                "drawing_id": "88507e6e-95cd-4918-9a58-56a0f1335659",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"11\" height=\"26\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\"> </text></svg>",
+                "x": -59,
+                "y": -90,
+                "z": 2
+            },
+            {
+                "drawing_id": "a0be89ca-4341-4b98-9914-39d22162dbf9",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"11\" height=\"26\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\"> </text></svg>",
+                "x": -578,
+                "y": -212,
+                "z": 2
+            },
+            {
+                "drawing_id": "ac41f997-ee1d-4989-840e-788c74ed800b",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"91\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">10.0.12.0/30\n\n </text></svg>",
+                "x": -111,
+                "y": -100,
+                "z": 2
+            },
+            {
+                "drawing_id": "55e489ac-cd8a-430a-9291-12a68820bd8c",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"83\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">10.0.13.0/30\n\n </text></svg>",
+                "x": 144,
+                "y": -97,
+                "z": 2
+            },
+            {
+                "drawing_id": "4dd40b72-e9d5-4529-a463-a93fa97e4d2a",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"83\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">10.0.23.0/30\n\n </text></svg>",
+                "x": -8,
+                "y": 53,
+                "z": 2
+            },
+            {
+                "drawing_id": "5b2edd74-c67c-43f4-a19e-cb650cb65548",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"91\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">10.0.24.0/30\n\n </text></svg>",
+                "x": -268,
+                "y": -32,
+                "z": 2
+            },
+            {
+                "drawing_id": "7e51a4c0-7c1b-4c22-ae8c-381b40bc5627",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"91\" height=\"68\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">10.0.35.0/30\n\n</text></svg>",
+                "x": 224,
+                "y": 37,
+                "z": 2
+            },
+            {
+                "drawing_id": "40c95ba0-c65e-46d7-a0f9-5a82a8a3c0ea",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"116\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">192.168.10.0/24\n\n </text></svg>",
+                "x": -540,
+                "y": 224,
+                "z": 2
+            },
+            {
+                "drawing_id": "46d9b00d-c042-4b2c-a082-ef1abdb59bdf",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"116\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">192.168.20.0/24\n\n </text></svg>",
+                "x": -254,
+                "y": 219,
+                "z": 2
+            },
+            {
+                "drawing_id": "2d5eace8-7cda-4057-a0e9-9972be7d67a7",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"116\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">192.168.30.0/24\n\n </text></svg>",
+                "x": 130,
+                "y": 229,
+                "z": 2
+            },
+            {
+                "drawing_id": "7e23bb13-9b5b-4116-aecf-b48ded9ee6eb",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"107\" height=\"62\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">192.168.40.0/24\n\n </text></svg>",
+                "x": 438,
+                "y": 237,
+                "z": 2
+            }
+        ],
         "links": [
             {
                 "filters": {},
@@ -428,8 +537,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "IOSv-R1",
-                    "x": 3,
-                    "y": -25
+                    "x": 70,
+                    "y": -21
                 },
                 "locked": false,
                 "name": "IOSv-R1",
@@ -498,8 +607,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "IOSv-R2",
-                    "x": 3,
-                    "y": -25
+                    "x": 64,
+                    "y": -26
                 },
                 "locked": false,
                 "name": "IOSv-R2",
@@ -568,8 +677,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "IOSv-R3",
-                    "x": 3,
-                    "y": -25
+                    "x": 35,
+                    "y": -31
                 },
                 "locked": false,
                 "name": "IOSv-R3",
@@ -692,8 +801,8 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "ac9ca4de-4def-49b5-8e05-2494e6aeaa3f",
                 "width": 66,
-                "x": -376,
-                "y": 1,
+                "x": -359,
+                "y": -11,
                 "z": 1
             },
             {
@@ -708,8 +817,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "IOSv-R5",
-                    "x": 3,
-                    "y": -25
+                    "x": 56,
+                    "y": -23
                 },
                 "locked": false,
                 "name": "IOSv-R5",
@@ -778,8 +887,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "IOSvL2-SW1",
-                    "x": -6,
-                    "y": -25
+                    "x": 70,
+                    "y": -26
                 },
                 "locked": false,
                 "name": "IOSvL2-SW1",
@@ -848,8 +957,8 @@
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                     "text": "IOSvL2-SW2",
-                    "x": -6,
-                    "y": -25
+                    "x": 69,
+                    "y": -33
                 },
                 "locked": false,
                 "name": "IOSvL2-SW2",
@@ -917,12 +1026,12 @@
                 "label": {
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "PC1",
-                    "x": 16,
-                    "y": -25
+                    "text": "studentsPC1",
+                    "x": -37,
+                    "y": -46
                 },
                 "locked": false,
-                "name": "PC1",
+                "name": "studentsPC1",
                 "node_id": "72a35ceb-cbdf-4a2e-b8d0-53199864b859",
                 "node_type": "vpcs",
                 "port_name_format": "Ethernet{0}",
@@ -931,8 +1040,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": -457,
-                "y": 378,
+                "x": -506,
+                "y": 356,
                 "z": 1
             },
             {
@@ -946,12 +1055,12 @@
                 "label": {
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "PC2",
-                    "x": 16,
-                    "y": -25
+                    "text": "teachersPC2",
+                    "x": 13,
+                    "y": -38
                 },
                 "locked": false,
-                "name": "PC2",
+                "name": "teachersPC2",
                 "node_id": "d1f5a395-468e-4a0d-afb7-71cdbb67344e",
                 "node_type": "vpcs",
                 "port_name_format": "Ethernet{0}",
@@ -960,8 +1069,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": -244,
-                "y": 370,
+                "x": -207,
+                "y": 354,
                 "z": 1
             },
             {
@@ -975,12 +1084,12 @@
                 "label": {
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "PC3",
-                    "x": 16,
-                    "y": -25
+                    "text": "LMS(Learning-services)PC3",
+                    "x": -105,
+                    "y": -44
                 },
                 "locked": false,
-                "name": "PC3",
+                "name": "LMS(Learning-services)PC3",
                 "node_id": "ddd92092-4880-4e61-be2e-49f2b39ddf25",
                 "node_type": "vpcs",
                 "port_name_format": "Ethernet{0}",
@@ -989,8 +1098,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": 246,
-                "y": 287,
+                "x": 139,
+                "y": 353,
                 "z": 1
             },
             {
@@ -1004,12 +1113,12 @@
                 "label": {
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "PC4",
-                    "x": 16,
-                    "y": -25
+                    "text": "AdminPC4",
+                    "x": 31,
+                    "y": -39
                 },
                 "locked": false,
-                "name": "PC4",
+                "name": "AdminPC4",
                 "node_id": "0868eaca-eb32-4b57-9922-bd7796fe6c09",
                 "node_type": "vpcs",
                 "port_name_format": "Ethernet{0}",
@@ -1018,8 +1127,8 @@
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "template_id": "19021f99-e36f-394d-b4a1-8aaa902ab9cc",
                 "width": 65,
-                "x": 393,
-                "y": 308,
+                "x": 491,
+                "y": 360,
                 "z": 1
             }
         ]

@@ -1,1 +1,3 @@
-Formatting '/home/abe/Desktop/nssa-final/gns3-project/project-files/qemu/06bf8c66-7911-4281-921d-ba75dd52a20f/hda_disk.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=4294967296 backing_file=/home/abe/GNS3/images/QEMU/vios_l2-adventerprisek9-m.ssa.high_iron_20200929.qcow2 backing_fmt=qcow2 lazy_refcounts=off refcount_bits=16
+No errors were found on the image.
+3280/65536 = 5.00% allocated, 100.00% fragmented, 100.00% compressed clusters
+Image end offset: 90439680

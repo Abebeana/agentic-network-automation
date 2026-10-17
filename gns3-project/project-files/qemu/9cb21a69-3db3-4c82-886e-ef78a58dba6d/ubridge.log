@@ -1,5 +1,5 @@
 uBridge version 1.0.1 running with libpcap version 1.10.4 (with TPACKET_V3)
-Hypervisor TCP control server started (IP 127.0.0.1 port 36939).
+Hypervisor TCP control server started (IP 127.0.0.1 port 46441).
 UDP tunnel connecting from local port 20073 to IPv4 address 127.0.0.1 on port 20072
 UDP tunnel connecting from local port 20051 to IPv4 address 127.0.0.1 on port 20050
 Source NIO listener thread for QEMU-9cb21a69-3db3-4c82-886e-ef78a58dba6d-0 has started
