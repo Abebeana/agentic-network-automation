@@ -1,283 +1,207 @@
-# NSSA 443 Phase 1 — school campus example (DESIGN ONLY)
-# Uses 5-router / 2-switch / 4-host GNS3 topology.
-
+# NSSA 443 - Phase 1 Network Design
+# School campus network using 5 routers, 2 switches, and 4 hosts
 
 project:
   name: NSSA443-School-Network-Automation
-  stage: phase_1_design
-  scenario: School campus with role-based services and protected administration
-network:
-  routers:
-  - R1
-  - R2
-  - R3
-  - R4
-  - R5
-  switches:
-  - SW1
-  - SW2
+  phase: 1
+  scenario: School campus network
+  objective: Separate students, teachers, school services, and administration while allowing access to the learning management system.
+
+topology:
+  routers: [R1, R2, R3, R4, R5]
+  switches: [SW1, SW2]
   hosts:
-  - PC1
-  - PC2
-  - PC3
-  - PC4
+    PC1: Student client
+    PC2: Teacher client
+    PC3: Linux LMS web server
+    PC4: Administration client
+  design:
+    core: R1, R2, and R3 provide alternative routing paths.
+    access: R4 connects the student and teacher VLANs; R5 connects the LMS and administration VLANs.
+
 router_links:
-- name: R1-R2
-  subnet: 10.0.12.0/30
-  endpoints:
-  - device: R1
-    interface: GigabitEthernet0/0
-    ip: 10.0.12.1/30
-  - device: R2
-    interface: GigabitEthernet0/0
-    ip: 10.0.12.2/30
-- name: R1-R3
-  subnet: 10.0.13.0/30
-  endpoints:
-  - device: R1
-    interface: GigabitEthernet0/1
-    ip: 10.0.13.1/30
-  - device: R3
-    interface: GigabitEthernet0/0
-    ip: 10.0.13.2/30
-- name: R2-R3
-  subnet: 10.0.23.0/30
-  endpoints:
-  - device: R2
-    interface: GigabitEthernet0/1
-    ip: 10.0.23.1/30
-  - device: R3
-    interface: GigabitEthernet0/1
-    ip: 10.0.23.2/30
-- name: R2-R4
-  subnet: 10.0.24.0/30
-  endpoints:
-  - device: R2
-    interface: GigabitEthernet0/2
-    ip: 10.0.24.1/30
-  - device: R4
-    interface: GigabitEthernet0/0
-    ip: 10.0.24.2/30
-- name: R3-R5
-  subnet: 10.0.35.0/30
-  endpoints:
-  - device: R3
-    interface: GigabitEthernet0/2
-    ip: 10.0.35.1/30
-  - device: R5
-    interface: GigabitEthernet0/0
-    ip: 10.0.35.2/30
+  - name: R1-R2
+    subnet: 10.0.12.0/30
+    endpoints:
+      - {device: R1, interface: GigabitEthernet0/0, ip: 10.0.12.1/30}
+      - {device: R2, interface: GigabitEthernet0/0, ip: 10.0.12.2/30}
+
+  - name: R1-R3
+    subnet: 10.0.13.0/30
+    endpoints:
+      - {device: R1, interface: GigabitEthernet0/1, ip: 10.0.13.1/30}
+      - {device: R3, interface: GigabitEthernet0/0, ip: 10.0.13.2/30}
+
+  - name: R2-R3
+    subnet: 10.0.23.0/30
+    endpoints:
+      - {device: R2, interface: GigabitEthernet0/1, ip: 10.0.23.1/30}
+      - {device: R3, interface: GigabitEthernet0/1, ip: 10.0.23.2/30}
+
+  - name: R2-R4
+    subnet: 10.0.24.0/30
+    endpoints:
+      - {device: R2, interface: GigabitEthernet0/2, ip: 10.0.24.1/30}
+      - {device: R4, interface: GigabitEthernet0/0, ip: 10.0.24.2/30}
+
+  - name: R3-R5
+    subnet: 10.0.35.0/30
+    endpoints:
+      - {device: R3, interface: GigabitEthernet0/2, ip: 10.0.35.1/30}
+      - {device: R5, interface: GigabitEthernet0/0, ip: 10.0.35.2/30}
+
 vlans:
-- id: 10
-  name: Students
-  subnet: 192.168.10.0/24
-  switch: SW1
-  access_port: GigabitEthernet0/1
-  host:
-    name: PC1
-    ip: 192.168.10.10/24
-  gateway:
-    router: R4
-    interface: GigabitEthernet0/1.10
-    ip: 192.168.10.1/24
-  purpose: Learner devices; approved LMS HTTPS only; no access to teacher/admin VLANs
-- id: 20
-  name: Teachers
-  subnet: 192.168.20.0/24
-  switch: SW1
-  access_port: GigabitEthernet0/2
-  host:
-    name: PC2
-    ip: 192.168.20.10/24
-  gateway:
-    router: R4
-    interface: GigabitEthernet0/1.20
-    ip: 192.168.20.1/24
-  purpose: Faculty devices; approved web access to the school LMS
-- id: 30
-  name: Learning_Services
-  subnet: 192.168.30.0/24
-  switch: SW2
-  access_port: GigabitEthernet0/1
-  host:
-    name: PC3
-    ip: 192.168.30.10/24
-    planned_role: Linux web server replacing PC3 VPCS during a later project stage
-  gateway:
-    router: R5
-    interface: GigabitEthernet0/1.30
-    ip: 192.168.30.1/24
-  purpose: LMS HTTPS service for students, teachers and administrators
-- id: 40
-  name: Administration
-  subnet: 192.168.40.0/24
-  switch: SW2
-  access_port: GigabitEthernet0/2
-  host:
-    name: PC4
-    ip: 192.168.40.10/24
-  gateway:
-    router: R5
-    interface: GigabitEthernet0/1.40
-    ip: 192.168.40.1/24
-  purpose: School administration staff and sensitive internal activities
+  - id: 10
+    name: Students
+    subnet: 192.168.10.0/24
+    switch: SW1
+    access_port: GigabitEthernet0/1
+    host: {name: PC1, ip: 192.168.10.10/24}
+    gateway: {router: R4, interface: GigabitEthernet0/1.10, encapsulation: dot1q 10, ip: 192.168.10.1/24}
+    access: HTTPS to the LMS only
+
+  - id: 20
+    name: Teachers
+    subnet: 192.168.20.0/24
+    switch: SW1
+    access_port: GigabitEthernet0/2
+    host: {name: PC2, ip: 192.168.20.10/24}
+    gateway: {router: R4, interface: GigabitEthernet0/1.20, encapsulation: dot1q 20, ip: 192.168.20.1/24}
+    access: HTTPS to the LMS and ICMP to the LMS for testing
+
+  - id: 30
+    name: Learning_Services
+    subnet: 192.168.30.0/24
+    switch: SW2
+    access_port: GigabitEthernet0/1
+    host: {name: PC3, ip: 192.168.30.10/24}
+    gateway: {router: R5, interface: GigabitEthernet0/1.30, encapsulation: dot1q 30, ip: 192.168.30.1/24}
+    access: Hosts the school LMS over HTTPS
+
+  - id: 40
+    name: Administration
+    subnet: 192.168.40.0/24
+    switch: SW2
+    access_port: GigabitEthernet0/2
+    host: {name: PC4, ip: 192.168.40.10/24}
+    gateway: {router: R5, interface: GigabitEthernet0/1.40, encapsulation: dot1q 40, ip: 192.168.40.1/24}
+    access: School administration and authorized router management
+
 trunks:
-- switch: SW1
-  interface: GigabitEthernet0/0
-  neighbor: R4
-  allowed_vlans:
-  - 10
-  - 20
-- switch: SW2
-  interface: GigabitEthernet0/0
-  neighbor: R5
-  allowed_vlans:
-  - 30
-  - 40
+  - switch: SW1
+    interface: GigabitEthernet0/0
+    router: R4
+    router_interface: GigabitEthernet0/1
+    encapsulation: 802.1Q
+    allowed_vlans: [10, 20]
+
+  - switch: SW2
+    interface: GigabitEthernet0/0
+    router: R5
+    router_interface: GigabitEthernet0/1
+    encapsulation: 802.1Q
+    allowed_vlans: [30, 40]
+
 routing:
   protocol: EIGRP
   autonomous_system: 100
-  participants:
-  - R1
-  - R2
-  - R3
-  - R4
-  - R5
-  advertised_networks:
+  auto_summary: false
+  routers:
     R1:
-    - 10.0.12.0/30
-    - 10.0.13.0/30
+      networks: [10.0.12.0/30, 10.0.13.0/30]
     R2:
-    - 10.0.12.0/30
-    - 10.0.23.0/30
-    - 10.0.24.0/30
+      networks: [10.0.12.0/30, 10.0.23.0/30, 10.0.24.0/30]
     R3:
-    - 10.0.13.0/30
-    - 10.0.23.0/30
-    - 10.0.35.0/30
+      networks: [10.0.13.0/30, 10.0.23.0/30, 10.0.35.0/30]
     R4:
-    - 10.0.24.0/30
-    - 192.168.10.0/24
-    - 192.168.20.0/24
+      networks: [10.0.24.0/30, 192.168.10.0/24, 192.168.20.0/24]
+      passive_interfaces: [GigabitEthernet0/1.10, GigabitEthernet0/1.20]
     R5:
-    - 10.0.35.0/30
-    - 192.168.30.0/24
-    - 192.168.40.0/24
-acl:
-  name: STUDENT_SCHOOL_ACCESS
-  purpose: Student network can access the school LMS using HTTPS only, but cannot reach faculty or administration
-    networks.
-  apply_to:
-    router: R4
-    interface: GigabitEthernet0/1.10
+      networks: [10.0.35.0/30, 192.168.30.0/24, 192.168.40.0/24]
+      passive_interfaces: [GigabitEthernet0/1.30, GigabitEthernet0/1.40]
+
+access_lists:
+  - name: STUDENT_SCHOOL_ACCESS
+    interface: R4 GigabitEthernet0/1.10
     direction: in
-  ordered_rules:
-  - sequence: 10
-    action: permit
-    protocol: tcp
-    source: 192.168.10.0/24
-    destination: 192.168.30.10/32
-    destination_port: 443
-    reason: Allow student HTTPS access to LMS
-  - sequence: 20
-    action: deny
-    protocol: ip
-    source: 192.168.10.0/24
-    destination: 192.168.30.0/24
-    reason: Block SSH and any unapproved protocols to school services
-  - sequence: 30
-    action: deny
-    protocol: ip
-    source: 192.168.10.0/24
-    destination: 192.168.20.0/24
-    reason: Keep faculty device network private
-  - sequence: 40
-    action: deny
-    protocol: ip
-    source: 192.168.10.0/24
-    destination: 192.168.40.0/24
-    reason: Prevent student access to school administration
-  - sequence: 100
-    action: permit
-    protocol: ip
-    source: 192.168.10.0/24
-    destination: any
-    reason: Allow other explicitly permitted school/outbound use; restrict management network separately
-  design_note: This ingress ACL controls VLAN 10; teacher/admin HTTPS flows remain routable under the baseline
-    policy. Management connectivity requires its own protected management design.
-success_checks:
-- id: C01
-  type: eigrp_neighbors
-  expected: all_5_router_links_adjacent
-- id: C02
-  type: route_present
-  device: R4
-  destination: 192.168.30.0/24
-  expected: true
-- id: C03
-  type: vlan_exists
-  switch: SW1
-  vlans:
-  - 10
-  - 20
-  expected: true
-- id: C04
-  type: vlan_exists
-  switch: SW2
-  vlans:
-  - 30
-  - 40
-  expected: true
-- id: C05
-  type: ping
-  source: PC2
-  destination: 192.168.30.10
-  expected: reachable
-  purpose: Required end-to-end infrastructure reachability check
-- id: C06
-  type: https_request
-  source_vlan: 10
-  destination: 192.168.30.10
-  port: 443
-  expected: allowed
-  phase: future_after_service_and_client_probes_exist
-- id: C07
-  type: tcp_connect
-  source_vlan: 10
-  destination: 192.168.30.10
-  port: 22
-  expected: denied_by_acl
-  phase: future_after_service_and_client_probes_exist
-- id: C08
-  type: ip_reachability
-  source_vlan: 10
-  destination: 192.168.40.10
-  expected: denied_by_acl
-  phase: future
-- id: C09
-  type: https_request
-  source_vlan: 20
-  destination: 192.168.30.10
-  port: 443
-  expected: allowed
-  phase: future_after_service_and_client_probes_exist
-- id: C10
-  type: https_request
-  source_vlan: 40
-  destination: 192.168.30.10
-  port: 443
-  expected: allowed
-  phase: future_after_service_and_client_probes_exist
-performance:
-  metric: deployment_to_reachability_seconds
-  start_event: deploy_button_pressed
-  end_condition: eigrp_converged_and_PC2_to_PC3_ping_succeeds
-  measurement_status: planned_not_measured
-application_service_plan:
-  service: School Learning Management System (LMS)
-  endpoint: 192.168.30.10
+    rules:
+      - {seq: 10, action: permit, protocol: tcp, source: 192.168.10.0/24, destination: 192.168.30.10/32, destination_port: 443}
+      - {seq: 20, action: deny, protocol: ip, source: 192.168.10.0/24, destination: 192.168.30.0/24}
+      - {seq: 30, action: deny, protocol: ip, source: 192.168.10.0/24, destination: 192.168.20.0/24}
+      - {seq: 40, action: deny, protocol: ip, source: 192.168.10.0/24, destination: 192.168.40.0/24}
+      - {seq: 50, action: deny, protocol: ip, source: 192.168.10.0/24, destination: 10.0.0.0/8}
+      - {seq: 100, action: deny, protocol: ip, source: 192.168.10.0/24, destination: any}
+
+  - name: TEACHER_SCHOOL_ACCESS
+    interface: R4 GigabitEthernet0/1.20
+    direction: in
+    rules:
+      - {seq: 10, action: permit, protocol: tcp, source: 192.168.20.0/24, destination: 192.168.30.10/32, destination_port: 443}
+      - {seq: 20, action: permit, protocol: icmp, source: 192.168.20.0/24, destination: 192.168.30.10/32}
+      - {seq: 30, action: deny, protocol: ip, source: 192.168.20.0/24, destination: 192.168.40.0/24}
+      - {seq: 40, action: deny, protocol: ip, source: 192.168.20.0/24, destination: 192.168.10.0/24}
+      - {seq: 50, action: deny, protocol: ip, source: 192.168.20.0/24, destination: 192.168.30.0/24}
+      - {seq: 100, action: deny, protocol: ip, source: 192.168.20.0/24, destination: any}
+
+  - name: SERVICE_ADMIN_PROTECTION
+    interface: R5 GigabitEthernet0/1.30
+    direction: in
+    rules:
+      - {seq: 10, action: permit, protocol: tcp, source: 192.168.30.10/32, source_port: 443, destination: 192.168.40.0/24, tcp_flags: established}
+      - {seq: 20, action: deny, protocol: ip, source: 192.168.30.0/24, destination: 192.168.40.0/24}
+      - {seq: 100, action: permit, protocol: ip, source: 192.168.30.0/24, destination: any}
+
+management:
+  protocol: SSH
+  version: 2
+  devices: [R1, R2, R3, R4, R5]
+  allowed_source: 192.168.40.10/32
+  access_control: Restrict VTY access using a standard ACL and local authentication.
+
+application:
+  name: School Learning Management System
+  host: PC3
+  address: 192.168.30.10
   protocol: HTTPS
-  tcp_port: 443
-  status: planned_not_running
-  later_stage_change: Replace PC3 VPCS with Linux HTTPS host and provide Linux clients or probes in source
-    VLANs. Preserve four logical endpoint slots.
+  port: 443
+
+verification:
+  - id: C01
+    test: EIGRP forms neighbor relationships across all five router links.
+    expected: pass
+  - id: C02
+    test: R4 learns the 192.168.30.0/24 network through EIGRP.
+    expected: pass
+  - id: C03
+    test: VLANs 10 and 20 exist on SW1; VLANs 30 and 40 exist on SW2.
+    expected: pass
+  - id: C04
+    test: PC2 can ping PC3 at 192.168.30.10.
+    expected: pass
+  - id: C05
+    test: PC1 can open https://192.168.30.10 on TCP port 443.
+    expected: pass
+  - id: C06
+    test: PC1 cannot connect to PC3 on TCP port 22.
+    expected: blocked
+  - id: C07
+    test: PC1 cannot reach PC2 or PC4.
+    expected: blocked
+  - id: C08
+    test: PC2 can open the LMS over HTTPS but cannot reach the administration VLAN.
+    expected: pass
+  - id: C09
+    test: PC4 can open the LMS over HTTPS.
+    expected: pass
+  - id: C10
+    test: SSH to routers is accepted from PC4 and denied from other host VLANs.
+    expected: pass
+  - id: C11
+    test: New connections from PC3 to the administration VLAN are blocked.
+    expected: blocked
+
+performance:
+  metric: Deployment-to-reachability time
+  start: Run the network automation deployment.
+  finish: Confirm EIGRP adjacencies and a successful ping from PC2 to PC3.
+  unit: seconds

@@ -12,3 +12,6 @@ Source NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-1 has s
 Destination NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-1 has started
 Source NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-2 has started
 Destination NIO listener thread for QEMU-b8c118f2-a374-42eb-bad6-efcb81a7cb3e-2 has started
+Hypervisor: closing control sockets.
+Hypervisor: closing remote client connections.
+Hypervisor: stopped.

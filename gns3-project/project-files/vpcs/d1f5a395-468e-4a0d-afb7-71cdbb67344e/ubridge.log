@@ -4,3 +4,6 @@ UDP tunnel connecting from local port 20179 to IPv4 address 127.0.0.1 on port 20
 UDP tunnel connecting from local port 20067 to IPv4 address 127.0.0.1 on port 20066
 Source NIO listener thread for VPCS-d1f5a395-468e-4a0d-afb7-71cdbb67344e has started
 Destination NIO listener thread for VPCS-d1f5a395-468e-4a0d-afb7-71cdbb67344e has started
+Hypervisor: closing control sockets.
+Hypervisor: closing remote client connections.
+Hypervisor: stopped.

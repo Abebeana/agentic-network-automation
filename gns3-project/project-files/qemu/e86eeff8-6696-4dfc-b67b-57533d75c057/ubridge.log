@@ -8,3 +8,6 @@ UDP tunnel connecting from local port 20091 to IPv4 address 127.0.0.1 on port 20
 UDP tunnel connecting from local port 20055 to IPv4 address 127.0.0.1 on port 20054
 Source NIO listener thread for QEMU-e86eeff8-6696-4dfc-b67b-57533d75c057-1 has started
 Destination NIO listener thread for QEMU-e86eeff8-6696-4dfc-b67b-57533d75c057-1 has started
+Hypervisor: closing control sockets.
+Hypervisor: closing remote client connections.
+Hypervisor: stopped.

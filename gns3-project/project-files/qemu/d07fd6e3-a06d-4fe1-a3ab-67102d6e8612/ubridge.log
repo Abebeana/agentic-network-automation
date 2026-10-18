@@ -8,3 +8,6 @@ UDP tunnel connecting from local port 20060 to IPv4 address 127.0.0.1 on port 20
 Destination NIO listener thread for QEMU-d07fd6e3-a06d-4fe1-a3ab-67102d6e8612-0 has started
 Destination NIO listener thread for QEMU-d07fd6e3-a06d-4fe1-a3ab-67102d6e8612-1 has started
 Source NIO listener thread for QEMU-d07fd6e3-a06d-4fe1-a3ab-67102d6e8612-1 has started
+Hypervisor: closing control sockets.
+Hypervisor: closing remote client connections.
+Hypervisor: stopped.

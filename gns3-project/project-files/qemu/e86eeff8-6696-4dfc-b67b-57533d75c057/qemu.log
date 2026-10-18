@@ -2,3 +2,4 @@ Start QEMU with /usr/bin/qemu-system-x86_64 -name IOSv-R1 -m 512M -smp cpus=1,so
 
 Execution log:
 qemu-system-x86_64: warning: host doesn't support requested feature: CPUID.80000001H:ECX.svm [bit 2]
+qemu-system-x86_64: terminating on signal 15 from pid 2610 (/usr/lib/systemd/systemd)
